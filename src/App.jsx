@@ -4,15 +4,17 @@ import './App.css';
 import Ticket from './Ticket/Ticket';
 import LeftFilter from './LeftFilter/LeftFilter';
 import UpperSorter from './UpperSorter/UpperSorter';
-// const getTickets = require("./getTickets");
+const getTickets = require("./getTickets");
 
 export default class App extends React.Component {
+
   render() {
+    // const data = getTickets();
+    const data = '{ fruit: \'apple\', two: \'three\ }';
+    // console.log(data);
     return (
   <div className="App">
-    <UpperSorter />
-    <LeftFilter />
-    <Ticket />
+    <Ticket tickets={data}/>
   </div>
     )
   }

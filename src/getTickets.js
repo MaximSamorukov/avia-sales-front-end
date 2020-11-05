@@ -2,6 +2,7 @@ const axios = require('axios');
 const { search, tickets } = require("./constants");
 
 function getTickets() {
+  let ticketsArray = [];
   axios.get(search).then((response) => {
     const { searchId } = response.data;
     // console.log(searchId);
@@ -11,7 +12,9 @@ function getTickets() {
       }
     }).then((res) => {
       const { tickets } = res.data
-        console.log(tickets);
+        // console.log(tickets);
+        ticketsArray = tickets;
+        return ticketsArray;
     })
     .catch((err) => {
       console.log(err);

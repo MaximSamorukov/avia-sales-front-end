@@ -2,6 +2,11 @@ import React from 'react';
 
 export default class Ticket extends React.Component {
   render() {
-    return <div>I'm a Ticket Component</div>;
+    const { tickets } = this.props;
+    return (
+      <div>
+        <p>Price: <span>{tickets}</span></p>
+        <p>Carrier: <span>carrier</span></p>
+      </div>);
   }
 }
