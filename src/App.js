@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+const getTickets = require("./getTickets");
 
 function App() {
+  getTickets();
   return (
     <div className="App">
       <header className="App-header">
