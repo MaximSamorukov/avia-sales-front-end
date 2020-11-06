@@ -1,29 +1,18 @@
 const axios = require('axios');
-const { search, tickets } = require("./constants");
+const { search, ticketsUrl } = require("./constants");
 
-function getTickets() {
-  let ticketsArray = [];
-  axios.get(search).then((response) => {
-    const { searchId } = response.data;
-    // console.log(searchId);
-    axios.get(tickets, {
+async function getTickets() {
+  const id = await axios.get(search);
+  const { searchId } = id.data;
+
+  const list = await axios.get(ticketsUrl, {
       params: {
         searchId
       }
-    }).then((res) => {
-      const { tickets } = res.data
-        // console.log(tickets);
-        ticketsArray = tickets;
-        return ticketsArray;
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+    });
+  const { tickets } = list.data;
 
+  return tickets;
 }
 
 module.exports = getTickets;
