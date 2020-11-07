@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="page.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <title>Avia-sales</title>
 </head>
 
@@ -15,7 +17,46 @@
     </header>
 
     <main>
-        <div class="left-menu-container">
+        <div class="myleft-menu-container">
+            <div class="myleft-menu-container-cont">
+                <div class="myleft-menu-container-title">
+                    количество пересадок
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="allOption">
+                    <label class="form-check-label" for="allOption">
+                        Все
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="without">
+                    <label class="form-check-label" for="without">
+                        Без пересадок
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="optionOne">
+                    <label class="form-check-label" for="optionOne">
+                        1 пересадка
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="optionTwo">
+                    <label class="form-check-label" for="optionTwo">
+                        2 пересадки
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="optionThree">
+                    <label class="form-check-label" for="optionThree">
+                        3 пересадки
+                    </label>
+                </div>
+            </div>
 
         </div>
         <div class="main-part-container">
@@ -28,6 +69,160 @@
                 </div>
             </div>
             <div class="tickets-list-container">
+
+                <div class="ticket-container">
+                    <div class="ticket-header">
+                        <div class="ticket-header-left">
+                            <div class="price">
+                                13 400 P
+                            </div>
+                        </div>
+                        <div class="ticket-header-right">
+                            <div class="air-logo">
+                                <img src="./assets/logos/S7 Logo.svg" alt="S7">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket-footer">
+                        <div class="ticket-footer-frst-col column">
+
+                            <div class="toward tw-frst-col">
+                                <div class="toward-place ticket-frstline">
+                                    MOW - HKT
+                                </div>
+                                <div class="toward-time ticket-scndline">
+                                    10:45 - 08:00
+                                </div>
+                            </div>
+                            <div class="back bc-frst-col">
+                                <div class="back-place ticket-frstline">
+                                    MOW - HKT
+                                </div>
+                                <div class="back-time ticket-scndline">
+                                    11:20 - 00:50
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="ticket-footer-scnd-col column">
+
+                            <div class="toward tw-scnd-col">
+                                <div class="toward-rootTime ticket-frstline">
+                                    в пути
+                                </div>
+                                <div class="toward-rootTime ticket-scndline">
+                                    21ч 15м
+                                </div>
+                            </div>
+                            <div class="back bk-scnd-col">
+                                <div class="back-rootTime ticket-frstline">
+                                    в пути
+                                </div>
+                                <div class="back-rootTime ticket-scndline">
+                                    13ч 30м
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="ticket-footer-thrd-col column">
+
+                            <div class="toward tw-thrd-col">
+                                <div class="toward-extraInfo ticket-frstline">
+                                    2 пересадки
+                                </div>
+                                <div class="toward-extraInfo ticket-scndline">
+                                    hkg, jnb
+                                </div>
+                            </div>
+                            <div class="back bk-thrd-col">
+                                <div class="back-extraInfo ticket-frstline">
+                                    1 пересадка
+                                </div>
+                                <div class="back-extraInfo ticket-scndline">
+                                    hkg
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ticket-container">
+                    <div class="ticket-header">
+                        <div class="ticket-header-left">
+                            <div class="price">
+                                13 400 P
+                            </div>
+                        </div>
+                        <div class="ticket-header-right">
+                            <div class="air-logo">
+                                <img src="./assets/logos/S7 Logo.svg" alt="S7">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket-footer">
+                        <div class="ticket-footer-frst-col column">
+
+                            <div class="toward tw-frst-col">
+                                <div class="toward-place ticket-frstline">
+                                    MOW - HKT
+                                </div>
+                                <div class="toward-time ticket-scndline">
+                                    10:45 - 08:00
+                                </div>
+                            </div>
+                            <div class="back bc-frst-col">
+                                <div class="back-place ticket-frstline">
+                                    MOW - HKT
+                                </div>
+                                <div class="back-time ticket-scndline">
+                                    11:20 - 00:50
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="ticket-footer-scnd-col column">
+
+                            <div class="toward tw-scnd-col">
+                                <div class="toward-rootTime ticket-frstline">
+                                    в пути
+                                </div>
+                                <div class="toward-rootTime ticket-scndline">
+                                    21ч 15м
+                                </div>
+                            </div>
+                            <div class="back bk-scnd-col">
+                                <div class="back-rootTime ticket-frstline">
+                                    в пути
+                                </div>
+                                <div class="back-rootTime ticket-scndline">
+                                    13ч 30м
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="ticket-footer-thrd-col column">
+
+                            <div class="toward tw-thrd-col">
+                                <div class="toward-extraInfo ticket-frstline">
+                                    2 пересадки
+                                </div>
+                                <div class="toward-extraInfo ticket-scndline">
+                                    hkg, jnb
+                                </div>
+                            </div>
+                            <div class="back bk-thrd-col">
+                                <div class="back-extraInfo ticket-frstline">
+                                    1 пересадка
+                                </div>
+                                <div class="back-extraInfo ticket-scndline">
+                                    hkg
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
 
                 <div class="ticket-container">
                     <div class="ticket-header">
