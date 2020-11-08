@@ -45,14 +45,11 @@ export default class Btn extends React.Component {
     // console.log(tickets);
     const item = this.makeList(tickets);
     return (
-      <>
-      <div className="btn-this" onClick={this.onClick}>
-        Try it
+      <div class="btn-get-info-cont">
+        <div class="btn-get-info">
+          получить информацию
+        </div>
       </div>
-      <div className="container">
-      {item}
-      </div>
-      </>
       );
   }
 }
