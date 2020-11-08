@@ -1,5 +1,7 @@
 import React from 'react';
-import S7Logo from '../assets/logos/S7Logo.svg'
+import S7Logo from '../assets/logos/S7Logo.svg';
+import Dinero from '../../node_modules/dinero.js';
+
 export default class Ticket extends React.Component {
   constructor(props) {
     super(props);
@@ -8,16 +10,60 @@ export default class Ticket extends React.Component {
     }
   }
 
+  getDuration = (duration) => {
+    // console.log(duration);
+    const hours = Math.floor(duration / 60);
+    const minutes = duration % 60;
+    return (`${hours}ч ${minutes}м`);
+  }
+
+  getStopAirports = ({stops}) => {
+    // console.log(stops);
+    const string = (stops.reduce((acc, item) => `${acc}${item},`, '')).slice(0, -1);
+    const returnStr = string === ''? ' ' : string;
+    return returnStr;
+  }
+
+  getStops = ({stops}) => {
+    // console.log(stops);
+    const array = ['прямой', '1 пересадка', '2 пересадки', '3 пересадки', '4 пересадки', '5 пересадок']
+    const howManyStops = stops.length < 6 ? array[stops.length] : `${stops.length} пересадок`;
+    return howManyStops;
+  }
+
+  getPrice = (pr) => {
+    const price = `${pr}`;
+    const hundreds = price.slice(0, -3);
+    const ones = price.slice(-3);
+    return `${hundreds} ${ones} Р`;
+  };
+
+  getTime = ({ date, duration }) => {
+    const begin = new Date(date);
+    const end = new Date(begin.valueOf() + (duration * 60 * 1000));
+    // console.log(end);
+    // console.log(begin);
+    const minutesBegin = `${begin.getMinutes()}`.length === 1 ? `0${begin.getMinutes()}` : `${begin.getMinutes()}`;
+    const hoursBegin = `${begin.getHours()}`.length === 1 ? `0${begin.getHours()}` : `${begin.getHours()}`;
+    // console.log(hoursBegin.length);
+    const minutesEnd = `${end.getMinutes()}`.length === 1 ? `0${end.getMinutes()}` : `${end.getMinutes()}`;
+    const hoursEnd = `${end.getHours()}`.length === 1 ? `0${end.getHours()}` : `${end.getHours()}`;
+    const time = (`${hoursBegin}:${minutesBegin} - ${hoursEnd}:${minutesEnd}`);
+    return time;
+  }
+
   render() {
-    const { tick } = this.props;
-    // console.log(tick);
+    const { carrier, price, segments } = this.props.tick;
+    const [ segFl, segSl ] = segments;
+    // this.getStopAirports(segFl);
+    // console.log(this.props.tick);
 
     return (
       <div className="ticket-container">
         <div className="ticket-header">
           <div className="ticket-header-left">
               <div className="price">
-                  13 400 P
+                  {this.getPrice(price)}
               </div>
           </div>
           <div className="ticket-header-right">
@@ -30,18 +76,18 @@ export default class Ticket extends React.Component {
           <div className="ticket-footer-frst-col column">
             <div className="toward tw-frst-col">
               <div className="toward-place ticket-frstline">
-                      MOW - HKT
+                {`${segFl.origin} - ${segFl.destination}`}
               </div>
               <div className="toward-time ticket-scndline">
-                      10:45 - 08:00
+                      {this.getTime(segFl)}
               </div>
             </div>
             <div className="back bc-frst-col">
               <div className="back-place ticket-frstline">
-                      MOW - HKT
+              {`${segSl.origin} - ${segSl.destination}`}
               </div>
               <div className="back-time ticket-scndline">
-                      11:20 - 00:50
+              {this.getTime(segSl)}
               </div>
             </div>
           </div>
@@ -51,7 +97,7 @@ export default class Ticket extends React.Component {
                       в пути
               </div>
               <div className="toward-rootTime ticket-scndline">
-                      21ч 15м
+                {this.getDuration(segFl.duration)}
               </div>
             </div>
             <div className="back bk-scnd-col">
@@ -59,25 +105,25 @@ export default class Ticket extends React.Component {
                       в пути
               </div>
               <div className="back-rootTime ticket-scndline">
-                      13ч 30м
+              {this.getDuration(segSl.duration)}
               </div>
             </div>
           </div>
           <div className="ticket-footer-thrd-col column">
             <div className="toward tw-thrd-col">
               <div className="toward-extraInfo ticket-frstline">
-                      2 пересадки
+                      {this.getStops(segFl)}
               </div>
               <div className="toward-extraInfo ticket-scndline">
-                      hkg, jnb
+                      {this.getStopAirports(segFl)}
               </div>
             </div>
             <div className="back bk-thrd-col">
               <div className="back-extraInfo ticket-frstline">
-                      1 пересадка
+                {this.getStops(segSl)}
               </div>
               <div className="back-extraInfo ticket-scndline">
-                      hkg
+              {this.getStopAirports(segSl)}
               </div>
             </div>
           </div>
