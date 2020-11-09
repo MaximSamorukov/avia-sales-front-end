@@ -11,6 +11,9 @@ export default class UpperSorter extends React.Component {
   }
 
   onClick = async (e) => {
+    if (this.props.ifItems === false) {
+      return;
+    }
     const target = e.target.className.split("-")[3].split(' ')[0];
     const opposite = target === 'left' ? 'right' : 'left';
     const newT = !this.state[target];

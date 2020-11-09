@@ -324,6 +324,9 @@ input[type="checkbox"]:checked::before {
   opacity: 1;
 }
 
+.font-gray {
+  color: #c9baba;
+}
 /* =================== Btn Get info ================== */
 
 .btn-get-info-cont {

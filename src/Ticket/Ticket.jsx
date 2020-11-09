@@ -1,6 +1,6 @@
 import React from 'react';
-import S7Logo from '../assets/logos/S7Logo.svg';
-import Dinero from '../../node_modules/dinero.js';
+// import S7Logo from '../assets/logos/S7Logo.svg';
+// import Dinero from '../../node_modules/dinero.js';
 
 export default class Ticket extends React.Component {
   constructor(props) {
@@ -57,7 +57,7 @@ export default class Ticket extends React.Component {
     const [ segFl, segSl ] = segments;
     // this.getStopAirports(segFl);
     // console.log(this.props.tick);
-
+    const logoCdn = `https://pics.avs.io/99/36/${carrier}.png`;
     return (
       <div className="ticket-container">
         <div className="ticket-header">
@@ -68,7 +68,7 @@ export default class Ticket extends React.Component {
           </div>
           <div className="ticket-header-right">
               <div className="air-logo">
-                  <img src={S7Logo} alt="S7" />
+                  <img src={logoCdn} alt="S7" />
               </div>
           </div>
         </div>
