@@ -1,11 +1,7 @@
 import React from 'react';
-import Ticket from '../Ticket/Ticket';
 const getTickets = require("../getTickets");
 
 export default class Btn extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   onClick = async (e) => {
     e.preventDefault();
