@@ -1,6 +1,4 @@
 import React from 'react';
-// import S7Logo from '../assets/logos/S7Logo.svg';
-// import Dinero from '../../node_modules/dinero.js';
 
 export default class Ticket extends React.Component {
   constructor(props) {
@@ -11,21 +9,18 @@ export default class Ticket extends React.Component {
   }
 
   getDuration = (duration) => {
-    // console.log(duration);
     const hours = Math.floor(duration / 60);
     const minutes = duration % 60;
     return (`${hours}ч ${minutes}м`);
   }
 
   getStopAirports = ({stops}) => {
-    // console.log(stops);
     const string = (stops.reduce((acc, item) => `${acc}${item},`, '')).slice(0, -1);
     const returnStr = string === ''? ' ' : string;
     return returnStr;
   }
 
   getStops = ({stops}) => {
-    // console.log(stops);
     const array = ['прямой', '1 пересадка', '2 пересадки', '3 пересадки', '4 пересадки', '5 пересадок']
     const howManyStops = stops.length < 6 ? array[stops.length] : `${stops.length} пересадок`;
     return howManyStops;
@@ -41,11 +36,8 @@ export default class Ticket extends React.Component {
   getTime = ({ date, duration }) => {
     const begin = new Date(date);
     const end = new Date(begin.valueOf() + (duration * 60 * 1000));
-    // console.log(end);
-    // console.log(begin);
     const minutesBegin = `${begin.getMinutes()}`.length === 1 ? `0${begin.getMinutes()}` : `${begin.getMinutes()}`;
     const hoursBegin = `${begin.getHours()}`.length === 1 ? `0${begin.getHours()}` : `${begin.getHours()}`;
-    // console.log(hoursBegin.length);
     const minutesEnd = `${end.getMinutes()}`.length === 1 ? `0${end.getMinutes()}` : `${end.getMinutes()}`;
     const hoursEnd = `${end.getHours()}`.length === 1 ? `0${end.getHours()}` : `${end.getHours()}`;
     const time = (`${hoursBegin}:${minutesBegin} - ${hoursEnd}:${minutesEnd}`);
@@ -55,8 +47,6 @@ export default class Ticket extends React.Component {
   render() {
     const { carrier, price, segments } = this.props.tick;
     const [ segFl, segSl ] = segments;
-    // this.getStopAirports(segFl);
-    // console.log(this.props.tick);
     const logoCdn = `https://pics.avs.io/99/36/${carrier}.png`;
     return (
       <div className="ticket-container">

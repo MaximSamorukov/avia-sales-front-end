@@ -9,9 +9,6 @@ export default class PrevNext extends React.Component {
   onClick = (e) => {
     e.preventDefault();
     this.props.action(e);
-    // const data = await getTickets();
-    // const newArray = data.slice(0, 10);
-    // this.props.callback(newArray);
   }
 
   render() {

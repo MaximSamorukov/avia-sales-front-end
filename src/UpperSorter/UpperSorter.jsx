@@ -11,6 +11,7 @@ export default class UpperSorter extends React.Component {
   }
 
   onClick = async (e) => {
+    e.preventDefault();
     if (this.props.ifItems === false) {
       return;
     }
