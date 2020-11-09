@@ -2,9 +2,6 @@ import React from 'react';
 
 
 export default class PrevNext extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   onClick = (e) => {
     e.preventDefault();

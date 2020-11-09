@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import Ticket from './Ticket/Ticket';
 import LeftFilter from './LeftFilter/LeftFilter';
