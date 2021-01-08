@@ -1,7 +1,7 @@
 const axios = require('axios');
 const { search, ticketsUrl } = require("./constants");
 
-async function getTickets() {
+export async function getTickets() {
   const id = await axios.get(search);
   const { searchId } = id.data;
 
@@ -15,4 +15,4 @@ async function getTickets() {
   return tickets;
 }
 
-module.exports = getTickets;
+// module.exports = getTickets;
