@@ -1,15 +1,12 @@
 import React from 'react';
-import Ticket from '../Ticket/Ticket';
-const getTickets = require("../getTickets");
+import getTickets from "../getTickets";
 
 export default class Btn extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   onClick = async (e) => {
     e.preventDefault();
     const data = await getTickets();
+    console.log(data);
     this.props.callback(data);
   }
 
